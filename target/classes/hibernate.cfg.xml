@@ -1,0 +1,12 @@
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://127.0.0.1:5432/postapp_db</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL94Dialect</property>
+        <property name="show-sql">true</property>
+
+    </session-factory>
+</hibernate-configuration>

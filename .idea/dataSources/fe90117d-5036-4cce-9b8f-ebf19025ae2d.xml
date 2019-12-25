@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="postapp_db@localhost">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.14">
+    <root id="1">
+      <ServerVersion>9.3.3</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="aggregator">
+      <ObjectId>49296</ObjectId>
+      <StateNumber>890</StateNumber>
+      <Owner>newadmin</Owner>
+    </database>
+    <database id="3" parent="1" name="airlines">
+      <ObjectId>49242</ObjectId>
+      <StateNumber>820</StateNumber>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="4" parent="1" name="dad">
+      <ObjectId>49203</ObjectId>
+      <StateNumber>800</StateNumber>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="5" parent="1" name="data">
+      <ObjectId>49152</ObjectId>
+      <StateNumber>794</StateNumber>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="6" parent="1" name="dbbyadmin">
+      <ObjectId>49263</ObjectId>
+      <StateNumber>827</StateNumber>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="7" parent="1" name="geodb">
+      <ObjectId>74446</ObjectId>
+      <StateNumber>2868</StateNumber>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="8" parent="1" name="ipsdb">
+      <ObjectId>57684</ObjectId>
+      <StateNumber>1591</StateNumber>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="9" parent="1" name="labrab">
+      <ObjectId>74354</ObjectId>
+      <StateNumber>2784</StateNumber>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="10" parent="1" name="labrab2">
+      <ObjectId>74382</ObjectId>
+      <StateNumber>2812</StateNumber>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="11" parent="1" name="market">
+      <ObjectId>57795</ObjectId>
+      <StateNumber>2510</StateNumber>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="12" parent="1" name="post_db">
+      <ObjectId>74456</ObjectId>
+      <StateNumber>2880</StateNumber>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="13" parent="1" name="postapp_db">
+      <ObjectId>74698</ObjectId>
+      <StateNumber>2918</StateNumber>
+      <Owner>postgres</Owner>
+      <IntrospectionStateNumber>2919</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="14" parent="1" name="postgres">
+      <ObjectId>12029</ObjectId>
+      <Comment>default administrative connection database</Comment>
+      <StateNumber>675</StateNumber>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="15" parent="1" name="products">
+      <ObjectId>49191</ObjectId>
+      <StateNumber>798</StateNumber>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="16" parent="1" name="stdb">
+      <ObjectId>57852</ObjectId>
+      <StateNumber>2565</StateNumber>
+      <Owner>postgres</Owner>
+    </database>
+    <role id="17" parent="1" name="aggregator">
+      <ObjectId>49312</ObjectId>
+      <Inherit>1</Inherit>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="18" parent="1" name="newadmin">
+      <ObjectId>49262</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="19" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="20" parent="1" name="prep">
+      <ObjectId>49313</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <schema id="21" parent="13" name="information_schema">
+      <ObjectId>11480</ObjectId>
+      <StateNumber>2</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="22" parent="13" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+      <Comment>system catalog schema</Comment>
+      <StateNumber>2</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="23" parent="13" name="pg_temp_1">
+      <ObjectId>11215</ObjectId>
+      <StateNumber>2</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="24" parent="13" name="pg_toast">
+      <ObjectId>99</ObjectId>
+      <Comment>reserved schema for TOAST tables</Comment>
+      <StateNumber>1</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="25" parent="13" name="pg_toast_temp_1">
+      <ObjectId>11216</ObjectId>
+      <StateNumber>2</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="26" parent="13" name="public">
+      <ObjectId>2200</ObjectId>
+      <Comment>standard public schema</Comment>
+      <StateNumber>2</StateNumber>
+      <Owner>postgres</Owner>
+      <IntrospectionStateNumber>2920</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <access-method id="27" parent="13" name="btree">
+      <ObjectId>403</ObjectId>
+      <Comment>b-tree index access method</Comment>
+      <StateNumber>1</StateNumber>
+    </access-method>
+    <access-method id="28" parent="13" name="hash">
+      <ObjectId>405</ObjectId>
+      <Comment>hash index access method</Comment>
+      <StateNumber>1</StateNumber>
+    </access-method>
+    <access-method id="29" parent="13" name="gist">
+      <ObjectId>783</ObjectId>
+      <Comment>GiST index access method</Comment>
+      <StateNumber>1</StateNumber>
+    </access-method>
+    <access-method id="30" parent="13" name="gin">
+      <ObjectId>2742</ObjectId>
+      <Comment>GIN index access method</Comment>
+      <StateNumber>1</StateNumber>
+    </access-method>
+    <access-method id="31" parent="13" name="spgist">
+      <ObjectId>4000</ObjectId>
+      <Comment>SP-GiST index access method</Comment>
+      <StateNumber>1</StateNumber>
+    </access-method>
+    <extension id="32" parent="13" name="plpgsql">
+      <ObjectId>11750</ObjectId>
+      <Comment>PL/pgSQL procedural language</Comment>
+      <StateNumber>2</StateNumber>
+      <Version>1.0</Version>
+      <SchemaName>pg_catalog</SchemaName>
+      <SchemaId>11</SchemaId>
+    </extension>
+  </database-model>
+</dataSource>
