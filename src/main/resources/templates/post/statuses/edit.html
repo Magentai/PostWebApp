@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Statuses Edit | Post App</title>
+</head>
+<body>
+<h1>Редактирование статуса отправления</h1>
+<form action="#" th:action="@{/post/statuses/edit/result}" th:object="${status}" method="post">
+    <input type="text" th:field="*{id}" id="id" th:value="${status.id}" hidden>
+    <label for="name">Название</label>
+    <input type="text" th:field="*{name}" id="name" th:value="${status.name}">
+    <input type="submit" value="Сохранить">
+</form>
+</body>
+</html>
+

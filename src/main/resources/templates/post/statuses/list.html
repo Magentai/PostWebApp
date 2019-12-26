@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Statuses List | Post App</title>
+</head>
+<body>
+<h1>Список статусов отправления</h1>
+<ul>
+    <a href="/post/statuses/add">Добавить</a>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>Название</td>
+        </tr>
+        <tr data-th-each="status : ${statuses}" class="status">
+            <td data-th-text="${status.id}"></td>
+            <td data-th-text="${status.name}"></td>
+            <td><a data-th-href="@{/post/statuses/edit?id={id}(id=${status.id})}">Редактировать</a></td>
+            <td><a data-th-href="@{/post/statuses/delete?id={id}(id=${status.id})}">Удалить</a></td>
+        </tr>
+    </table>
+</ul>
+</body>
+</html>
+

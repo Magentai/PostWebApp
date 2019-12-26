@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Transfers Add | Post App</title>
+</head>
+<body>
+<h1>Добавление информации о трансфере посылки</h1>
+<form action="#" th:action="@{/post/transfers/add/result}" th:object="${transfer}" method="post">
+    <label for="package_id">ID посылки</label>
+    <input type="text" th:field="*{package_id}" id="package_id">
+    <label for="date">Дата</label>
+    <input type="text" th:field="*{date}" id="date">
+    <label for="status_id">ID статуса</label>
+    <input type="text" th:field="*{status_id}" id="status_id">
+    <label for="office_id">ID почтового офиса</label>
+    <input type="text" th:field="*{office_id}" id="office_id">
+    <input type="submit" value="Сохранить">
+</form>
+</body>
+</html>
+

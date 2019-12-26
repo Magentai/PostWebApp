@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Package Types List | Post App</title>
+</head>
+<body>
+<h1>Список типов посылки</h1>
+<ul>
+    <a href="/post/packagetypes/add">Добавить</a>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>Название</td>
+            <td>Стоимость</td>
+        </tr>
+        <tr data-th-each="packagetype : ${packagetypes}" class="packagetype">
+            <td data-th-text="${packagetype.id}"></td>
+            <td data-th-text="${packagetype.name}"></td>
+            <td data-th-text="${packagetype.cost}"></td>
+            <td><a data-th-href="@{/post/packagetypes/edit?id={id}(id=${packagetype.id})}">Редактировать</a></td>
+            <td><a data-th-href="@{/post/packagetypes/delete?id={id}(id=${packagetype.id})}">Удалить</a></td>
+        </tr>
+    </table>
+</ul>
+</body>
+</html>
+

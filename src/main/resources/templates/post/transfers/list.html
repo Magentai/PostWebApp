@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Transfers List | Post App</title>
+</head>
+<body>
+<h1>Информация о трансфере посылок</h1>
+<ul>
+    <a href="/post/transfers/add">Добавить</a>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>ID посылки</td>
+            <td>Дата</td>
+            <td>ID статуса</td>
+            <td>ID почтового офиса</td>
+        </tr>
+        <tr data-th-each="transfer : ${transfers}" class="transfer">
+            <td data-th-text="${transfer.id}"></td>
+            <td data-th-text="${transfer.package_id}"></td>
+            <td data-th-text="${transfer.date}"></td>
+            <td data-th-text="${transfer.status_id}"></td>
+            <td data-th-text="${transfer.office_id}"></td>
+            <td><a data-th-href="@{/post/transfers/edit?id={id}(id=${transfer.id})}">Редактировать</a></td>
+            <td><a data-th-href="@{/post/transfers/delete?id={id}(id=${transfer.id})}">Удалить</a></td>
+        </tr>
+    </table>
+</ul>
+</body>
+</html>
+

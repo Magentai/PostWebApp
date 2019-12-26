@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Package List | Post App</title>
+</head>
+<body>
+<h1>Список посылок</h1>
+<ul>
+    <a href="/post/packages/add">Добавить</a>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>Имя отправителя</td>
+            <td>Адрес отправителя</td>
+            <td>Имя получателя</td>
+            <td>Адрес получателя</td>
+            <td>Дата отправления</td>
+            <td>Тип посылки</td>
+            <td>Вес</td>
+            <td>Наложенный платёж</td>
+        </tr>
+        <tr data-th-each="postpackage : ${packages}" class="postpackage">
+            <td data-th-text="${postpackage.id}"></td>
+            <td data-th-text="${postpackage.sender_name}"></td>
+            <td data-th-text="${postpackage.sender_addr}"></td>
+            <td data-th-text="${postpackage.dest_name}"></td>
+            <td data-th-text="${postpackage.dest_addr}"></td>
+            <td data-th-text="${postpackage.send_date}"></td>
+            <td data-th-text="${postpackage.package_type}"></td>
+            <td data-th-text="${postpackage.weight}"></td>
+            <td data-th-text="${postpackage.COD}"></td>
+            <td><a data-th-href="@{/post/packages/edit?id={id}(id=${postpackage.id})}">Редактировать</a></td>
+            <td><a data-th-href="@{/post/packages/delete?id={id}(id=${postpackage.id})}">Удалить</a></td>
+        </tr>
+    </table>
+</ul>
+</body>
+</html>
+
