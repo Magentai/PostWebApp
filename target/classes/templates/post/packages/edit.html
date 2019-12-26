@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Package List | Post App</title>
+</head>
+<body>
+<h1>Редактирование посылки</h1>
+<form action="#" th:action="@{/post/packages/edit/result}" th:object="${postpackage}" method="post">
+    <input type="text" th:field="*{id}" id="id" th:value="${postpackage.id}" hidden>
+    <label for="sender_name">Имя отправителя</label>
+    <input type="text" th:field="*{sender_name}" id="sender_name" th:value="${postpackage.sender_name}">
+    <label for="sender_addr">Адрес отправителя</label>
+    <input type="text" th:field="*{sender_addr}" id="sender_addr" th:value="${postpackage.sender_addr}">
+    <label for="dest_name">Имя получателя</label>
+    <input type="text" th:field="*{dest_name}" id="dest_name" th:value="${postpackage.dest_name}">
+    <label for="dest_addr">Адрес получателя</label>
+    <input type="text" th:field="*{dest_addr}" id="dest_addr" th:value="${postpackage.dest_addr}">
+    <label for="send_date">Дата отправления</label>
+    <input type="text" th:field="*{send_date}" id="send_date" th:value="${postpackage.send_date}">
+    <label for="package_type">Тип посылки</label>
+    <input type="text" th:field="*{package_type}" id="package_type" th:value="${postpackage.package_type}">
+    <label for="weight">Вес</label>
+    <input type="text" th:field="*{weight}" id="weight" th:value="${postpackage.weight}">
+    <label for="COD">Наложенный платёж</label>
+    <input type="text" th:field="*{COD}" id="COD" th:value="${postpackage.COD}">
+    <input type="submit" value="Сохранить">
+</form>
+</body>
+</html>
+

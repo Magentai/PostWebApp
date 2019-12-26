@@ -1,16 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <title>Offices List | Post App</title>
 </head>
 <body>
-<h1>List of Offices</h1>
+<h1>Список почтовых офисов</h1>
 <ul>
-    <li data-th-each="o : ${offices}" class="office">
-        <a data-th-href="@{/post/offices/{officeId}(officeId=${office.id})}"
-           data-th-text="${office.index}"></a>
-    </li>
+    <a href="/post/offices/add">Добавить</a>
+    <form action="#" th:action="@{/post/offices/search}" method="post">
+        <label for="search_index">Поиск по индексу: </label><input type="text" id="search_index">
+    <input type="submit" value="Найти">
+    </form>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>Город</td>
+            <td>Адрес</td>
+            <td>Индекс</td>
+            <td>Контактный номер</td>
+        </tr>
+        <tr data-th-each="office : ${offices}" class="office">
+            <td data-th-text="${office.id}"></td>
+            <td data-th-text="${office.city}"></td>
+            <td data-th-text="${office.addr}"></td>
+            <td data-th-text="${office.index}"></td>
+            <td data-th-text="${office.phone}"></td>
+            <td><a data-th-href="@{/post/offices/edit?id={id}(id=${office.id})}">Редактировать</a></td>
+            <td><a data-th-href="@{/post/offices/delete?id={id}(id=${office.id})}">Удалить</a></td>
+        </tr>
+    </table>
 </ul>
 </body>
 </html>

@@ -1,4 +1,7 @@
-package app.rep.hibernateimpl;
+package app.rep;
 
-public interface PackageTypeRepository {
+import app.obj.PackageType;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PackageTypeRepository extends JpaRepository<PackageType, Long> {
 }

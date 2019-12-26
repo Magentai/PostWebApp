@@ -63,9 +63,14 @@
       <ObjectId>74698</ObjectId>
       <StateNumber>2918</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>2919</IntrospectionStateNumber>
+      <IntrospectionStateNumber>3047</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
+      <Relations>sequence|table|74699|74701|1
+sequence|table|74707|74709|1
+sequence|table|74715|74717|1
+sequence|table|74723|74725|1
+</Relations>
     </database>
     <database id="14" parent="1" name="postgres">
       <ObjectId>12029</ObjectId>
@@ -149,7 +154,7 @@
       <Comment>standard public schema</Comment>
       <StateNumber>2</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>2920</IntrospectionStateNumber>
+      <IntrospectionStateNumber>3048</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -186,5 +191,262 @@
       <SchemaName>pg_catalog</SchemaName>
       <SchemaId>11</SchemaId>
     </extension>
+    <sequence id="33" parent="26" name="office_id_seq">
+      <ObjectId>74699</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>2921</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="34" parent="26" name="packagetype_id_seq">
+      <ObjectId>74707</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>2922</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="35" parent="26" name="status_id_seq">
+      <ObjectId>74715</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>2923</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="36" parent="26" name="transfer_id_seq">
+      <ObjectId>74723</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>2924</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <table id="37" parent="26" name="office">
+      <ObjectId>74701</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>2921</StateNumber>
+    </table>
+    <table id="38" parent="26" name="package">
+      <ObjectId>82890</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>3046</StateNumber>
+    </table>
+    <table id="39" parent="26" name="packagetype">
+      <ObjectId>74709</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>2922</StateNumber>
+    </table>
+    <table id="40" parent="26" name="status">
+      <ObjectId>74717</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>2923</StateNumber>
+    </table>
+    <table id="41" parent="26" name="transfer">
+      <ObjectId>74725</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>2924</StateNumber>
+    </table>
+    <column id="42" parent="37" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2921</StateNumber>
+      <DefaultExpression>nextval(&apos;office_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="43" parent="37" name="addr">
+      <Position>2</Position>
+      <DataType>varchar(200)|0s</DataType>
+      <StateNumber>2921</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="44" parent="37" name="city">
+      <Position>3</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>2921</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="45" parent="37" name="index">
+      <Position>4</Position>
+      <DataType>varchar(6)|0s</DataType>
+      <StateNumber>2921</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="46" parent="37" name="phone">
+      <Position>5</Position>
+      <DataType>varchar(11)|0s</DataType>
+      <StateNumber>2921</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="47" parent="37" name="office_pkey">
+      <ObjectId>74705</ObjectId>
+      <StateNumber>2921</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="48" parent="37" name="office_pkey">
+      <ObjectId>74706</ObjectId>
+      <StateNumber>2921</StateNumber>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>office_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="49" parent="38" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>3046</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="50" parent="38" name="sender_name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>3046</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="51" parent="38" name="sender_addr">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>3046</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="52" parent="38" name="dest_name">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>3046</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="53" parent="38" name="dest_addr">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>3046</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="54" parent="38" name="send_date">
+      <Position>6</Position>
+      <DataType>timestamp with time zone|0s</DataType>
+      <StateNumber>3046</StateNumber>
+      <TypeId>1184</TypeId>
+    </column>
+    <column id="55" parent="38" name="package_type">
+      <Position>7</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>3046</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="56" parent="38" name="weight">
+      <Position>8</Position>
+      <DataType>real|0s</DataType>
+      <StateNumber>3046</StateNumber>
+      <TypeId>700</TypeId>
+    </column>
+    <column id="57" parent="38" name="cod">
+      <Position>9</Position>
+      <DataType>real|0s</DataType>
+      <StateNumber>3046</StateNumber>
+      <TypeId>700</TypeId>
+    </column>
+    <column id="58" parent="39" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2922</StateNumber>
+      <DefaultExpression>nextval(&apos;packagetype_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="59" parent="39" name="cost">
+      <Position>2</Position>
+      <DataType>double precision|0s</DataType>
+      <StateNumber>2922</StateNumber>
+      <TypeId>701</TypeId>
+    </column>
+    <column id="60" parent="39" name="name">
+      <Position>3</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>2922</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="61" parent="39" name="packagetype_pkey">
+      <ObjectId>74713</ObjectId>
+      <StateNumber>2922</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="62" parent="39" name="packagetype_pkey">
+      <ObjectId>74714</ObjectId>
+      <StateNumber>2922</StateNumber>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>packagetype_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="63" parent="40" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2923</StateNumber>
+      <DefaultExpression>nextval(&apos;status_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="64" parent="40" name="name">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>2923</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="65" parent="40" name="status_pkey">
+      <ObjectId>74721</ObjectId>
+      <StateNumber>2923</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="66" parent="40" name="status_pkey">
+      <ObjectId>74722</ObjectId>
+      <StateNumber>2923</StateNumber>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>status_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="67" parent="41" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2924</StateNumber>
+      <DefaultExpression>nextval(&apos;transfer_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="68" parent="41" name="date">
+      <Position>2</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>2924</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="69" parent="41" name="office_id">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>2924</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="70" parent="41" name="package_id">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>2924</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="71" parent="41" name="status">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>2924</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="72" parent="41" name="transfer_pkey">
+      <ObjectId>74729</ObjectId>
+      <StateNumber>2924</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="73" parent="41" name="transfer_pkey">
+      <ObjectId>74730</ObjectId>
+      <StateNumber>2924</StateNumber>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>transfer_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>

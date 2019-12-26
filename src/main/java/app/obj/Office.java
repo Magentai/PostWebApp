@@ -6,13 +6,21 @@ import javax.persistence.*;
 @Table(name = "OFFICE")
 public class Office {
 
-    int id;
+    Long id;
     String index;
     String city;
     String addr;
     String phone;
 
     public Office() {
+    }
+
+    public Office(Long id, String index, String city, String addr, String phone) {
+        this.id = id;
+        this.index = index;
+        this.city = city;
+        this.addr = addr;
+        this.phone = phone;
     }
 
     public Office(String index, String city, String addr, String phone) {
@@ -25,11 +33,11 @@ public class Office {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -7,7 +7,7 @@ import java.util.Date;
 @Table(name = "TRANSFER")
 public class Transfer {
 
-    int id;
+    Long id;
     int package_id;
     Date date;
     int status_id;
@@ -16,7 +16,7 @@ public class Transfer {
     public Transfer() {
     }
 
-    public Transfer(int id, int package_id, Date date, int status_id, int office_id) {
+    public Transfer(Long id, int package_id, Date date, int status_id, int office_id) {
         this.id = id;
         this.package_id = package_id;
         this.date = date;
@@ -27,11 +27,11 @@ public class Transfer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

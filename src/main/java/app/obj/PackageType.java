@@ -6,14 +6,14 @@ import javax.persistence.*;
 @Table(name = "PACKAGETYPE")
 public class PackageType {
 
-    int id;
+    Long id;
     String name;
     double cost;
 
     public PackageType() {
     }
 
-    public PackageType(int id, String name, double cost) {
+    public PackageType(Long id, String name, double cost) {
         this.id = id;
         this.name = name;
         this.cost = cost;
@@ -22,11 +22,11 @@ public class PackageType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

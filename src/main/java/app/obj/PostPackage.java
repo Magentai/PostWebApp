@@ -7,7 +7,7 @@ import java.util.Date;
 @Table(name = "PACKAGE")
 public class PostPackage {
 
-    int id;
+    Long id;
     String sender_name;
     String sender_addr;
     String dest_name;
@@ -20,7 +20,7 @@ public class PostPackage {
     public PostPackage() {
     }
 
-    public PostPackage(int id, String sender_name, String sender_addr, String dest_name, String dest_addr, Date send_date, int package_type, double weight, double COD) {
+    public PostPackage(Long id, String sender_name, String sender_addr, String dest_name, String dest_addr, Date send_date, int package_type, double weight, double COD) {
         this.id = id;
         this.sender_name = sender_name;
         this.sender_addr = sender_addr;
@@ -35,11 +35,11 @@ public class PostPackage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
