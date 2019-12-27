@@ -1,26 +1,27 @@
 package app.obj;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.Date;
 
 @Entity
 @Table(name = "PACKAGE")
 public class PostPackage {
 
-    Long id;
-    String sender_name;
-    String sender_addr;
-    String dest_name;
-    String dest_addr;
-    Date send_date;
-    int package_type;
-    double weight;
-    double COD;
+    private Long id;
+    private String sender_name;
+    private String sender_addr;
+    private String dest_name;
+    private String dest_addr;
+    private int package_type;
+    private Timestamp send_date;
+    private double weight;
+    private double COD;
 
     public PostPackage() {
     }
 
-    public PostPackage(Long id, String sender_name, String sender_addr, String dest_name, String dest_addr, Date send_date, int package_type, double weight, double COD) {
+    public PostPackage(Long id, String sender_name, String sender_addr, String dest_name, String dest_addr, Timestamp send_date, int package_type, double weight, double COD) {
         this.id = id;
         this.sender_name = sender_name;
         this.sender_addr = sender_addr;
@@ -33,7 +34,7 @@ public class PostPackage {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "ID")
     public Long getId() {
         return id;
@@ -80,11 +81,11 @@ public class PostPackage {
     }
 
     @Column(name = "SEND_DATE")
-    public Date getSend_date() {
+    public Timestamp getSend_date() {
         return send_date;
     }
 
-    public void setSend_date(Date send_date) {
+    public void setSend_date(Timestamp send_date) {
         this.send_date = send_date;
     }
 
@@ -113,5 +114,20 @@ public class PostPackage {
 
     public void setCOD(double COD) {
         this.COD = COD;
+    }
+
+    @Override
+    public String toString() {
+        return "PostPackage{" +
+                "id=" + id +
+                ", sender_name='" + sender_name + '\'' +
+                ", sender_addr='" + sender_addr + '\'' +
+                ", dest_name='" + dest_name + '\'' +
+                ", dest_addr='" + dest_addr + '\'' +
+                ", package_type=" + package_type +
+                ", send_date=" + send_date +
+                ", weight=" + weight +
+                ", COD=" + COD +
+                '}';
     }
 }

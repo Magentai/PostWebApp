@@ -6,9 +6,9 @@ import javax.persistence.*;
 @Table(name = "PACKAGETYPE")
 public class PackageType {
 
-    Long id;
-    String name;
-    double cost;
+    private Long id;
+    private String name;
+    private double cost;
 
     public PackageType() {
     }
@@ -20,7 +20,7 @@ public class PackageType {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "ID")
     public Long getId() {
         return id;
@@ -46,5 +46,14 @@ public class PackageType {
 
     public void setCost(double cost) {
         this.cost = cost;
+    }
+
+    @Override
+    public String toString() {
+        return "PackageType{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", cost=" + cost +
+                '}';
     }
 }

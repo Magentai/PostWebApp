@@ -6,8 +6,8 @@ import javax.persistence.*;
 @Table(name = "STATUS")
 public class Status {
 
-    Long id;
-    String name;
+    private Long id;
+    private String name;
 
     public Status() {
     }
@@ -18,7 +18,7 @@ public class Status {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "ID")
     public Long getId() {
         return id;

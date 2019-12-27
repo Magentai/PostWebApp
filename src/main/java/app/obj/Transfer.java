@@ -1,22 +1,23 @@
 package app.obj;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.Date;
 
 @Entity
 @Table(name = "TRANSFER")
 public class Transfer {
 
-    Long id;
-    int package_id;
-    Date date;
-    int status_id;
-    int office_id;
+    private Long id;
+    private int package_id;
+    private Timestamp date;
+    private int status_id;
+    private int office_id;
 
     public Transfer() {
     }
 
-    public Transfer(Long id, int package_id, Date date, int status_id, int office_id) {
+    public Transfer(Long id, int package_id, Timestamp date, int status_id, int office_id) {
         this.id = id;
         this.package_id = package_id;
         this.date = date;
@@ -25,7 +26,7 @@ public class Transfer {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "ID")
     public Long getId() {
         return id;
@@ -45,11 +46,11 @@ public class Transfer {
     }
 
     @Column(name = "DATE")
-    public Date getDate() {
+    public Timestamp getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(Timestamp date) {
         this.date = date;
     }
 

@@ -45,7 +45,7 @@ public class StatusController {
 
     @GetMapping("/edit")
     public String edit(@RequestParam Long id, Model model) {
-        model.addAttribute("packages", service.get(id));
+        model.addAttribute("status", service.get(id));
         return "post/statuses/edit";
     }
 

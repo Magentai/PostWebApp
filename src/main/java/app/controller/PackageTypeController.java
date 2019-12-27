@@ -45,7 +45,7 @@ public class PackageTypeController {
 
     @GetMapping("/edit")
     public String edit(@RequestParam Long id, Model model) {
-        model.addAttribute("packages", service.get(id));
+        model.addAttribute("packageType", service.get(id));
         return "post/packagetypes/edit";
     }
 

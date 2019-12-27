@@ -14,7 +14,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("post/packages")
+@RequestMapping("/post/packages")
 public class PackageController {
 
     @Autowired
@@ -27,12 +27,13 @@ public class PackageController {
     }
 
     @GetMapping("/add")
-    public String showAddForm(PostPackage obj) {
+    public String showAddForm(PostPackage postPackage) {
         return "post/packages/add";
     }
 
     @PostMapping("/add/result")
     public RedirectView add(@Valid PostPackage obj, Model model) {
+        System.out.println(obj.toString());
         service.save(obj);
         return new RedirectView("/post/packages/list");
     }
@@ -45,12 +46,13 @@ public class PackageController {
 
     @GetMapping("/edit")
     public String edit(@RequestParam Long id, Model model) {
-        model.addAttribute("packages", service.get(id));
+        model.addAttribute("postPackage", service.get(id));
         return "post/packages/edit";
     }
 
     @PostMapping("/edit/result")
     public RedirectView edit(@Valid PostPackage obj) {
+        System.out.println(obj.toString());
         service.delete(obj.getId());
         service.save(obj);
         return new RedirectView("/post/packages/list");

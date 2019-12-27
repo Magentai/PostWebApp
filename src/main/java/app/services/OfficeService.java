@@ -30,4 +30,8 @@ public class OfficeService {
     public void delete(long id) {
         repository.deleteById(id);
     }
+
+    public List<Office> findOfficesByIndex(String index) {
+        return repository.findOfficesByIndex(index);
+    }
 }

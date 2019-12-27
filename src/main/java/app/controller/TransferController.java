@@ -1,6 +1,7 @@
 package app.controller;
 
 import app.obj.Transfer;
+import app.services.StatusService;
 import app.services.TransferService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,8 @@ public class TransferController {
 
     @Autowired
     private TransferService service;
+    @Autowired
+    private StatusService statusService;
 
     @GetMapping("/list")
     public String list(Model model) {
@@ -27,7 +30,8 @@ public class TransferController {
     }
 
     @GetMapping("/add")
-    public String showAddForm(Transfer obj) {
+    public String showAddForm(Transfer obj, Model model) {
+        model.addAttribute("statuses", statusService.listAll());
         return "post/transfers/add";
     }
 
@@ -45,7 +49,7 @@ public class TransferController {
 
     @GetMapping("/edit")
     public String edit(@RequestParam Long id, Model model) {
-        model.addAttribute("transfers", service.get(id));
+        model.addAttribute("transfer", service.get(id));
         return "post/transfers/edit";
     }
 

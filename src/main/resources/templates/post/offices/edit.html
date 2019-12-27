@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Offices Edit | Post App</title>
+    <link rel="stylesheet" href="..../static/css/uikit.min.css" th:href="@{/css/uikit.min.css}" />
+    <link rel="shortcut icon" href="..../icon/favicon.ico" th:href="@{/icon/favicon.ico}" type="image/x-icon">
 </head>
-<body>
-<h1>Редактирование почтового офиса</h1>
-<form action="#" th:action="@{/post/offices/edit/result}" th:object="${office}" method="post">
-    <input type="text" th:field="*{id}" id="id" th:value="${office.id}" hidden>
+<body class="uk-background-muted">
+<h1 align="center" style="margin: 30px">Редактирование почтового офиса</h1>
+<form class="uk-container uk-container-small uk-fieldset" action="#" th:action="@{/post/offices/edit/result}" th:object="${office}" method="post">
+    <input class="uk-input" type="text" th:field="*{id}" id="id" th:value="${office.id}" hidden>
     <label for="city">Город</label>
-    <input type="text" th:field="*{city}" id="city" th:value="${office.city}">
+    <input class="uk-input" type="text" th:field="*{city}" id="city" th:value="${office.city}">
     <label for="addr">Адрес</label>
-    <input type="text" th:field="*{addr}" id="addr" th:value="${office.addr}">
+    <input class="uk-input" type="text" th:field="*{addr}" id="addr" th:value="${office.addr}">
     <label for="index">Индекс</label>
-    <input type="text" th:field="*{index}" id="index" th:value="${office.index}">
+    <input class="uk-input" type="text" th:field="*{index}" id="index" th:value="${office.index}">
     <label for="phone">Контактный номер</label>
-    <input type="text" th:field="*{phone}" id="phone" th:value="${office.phone}">
-    <input type="submit" value="Сохранить">
+    <input class="uk-input" type="text" th:field="*{phone}" id="phone" th:value="${office.phone}">
+    <input class="uk-button uk-button-primary uk-margin" type="submit" value="Сохранить">
 </form>
 </body>
 </html>

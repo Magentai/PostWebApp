@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Добавление посылки</h1>
-<form action="#" th:action="@{/post/packages/add/result}" th:object="${postpackage}" method="post">
+<form action="#" th:action="@{/post/packages/add/result}" th:object="${postPackage}" method="post">
     <label for="sender_name">Имя отправителя</label>
     <input type="text" th:field="*{sender_name}" id="sender_name">
     <label for="sender_addr">Адрес отправителя</label>

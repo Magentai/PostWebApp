@@ -6,12 +6,12 @@
 </head>
 <body>
 <h1>Редактирование типа посылки</h1>
-<form action="#" th:action="@{/post/packagetypes/edit/result}" th:object="${packagetype}" method="post">
-    <input type="text" th:field="*{id}" id="id" th:value="${office.id}" hidden>
+<form action="#" th:action="@{/post/packagetypes/edit/result}" th:object="${packageType}" method="post">
+    <input type="text" th:field="*{id}" id="id" th:value="${packageType.id}" hidden>
     <label for="name">Название</label>
-    <input type="text" th:field="*{name}" id="name" th:value="${office.name}">
+    <input type="text" th:field="*{name}" id="name" th:value="${packageType.name}">
     <label for="cost">Стоимость</label>
-    <input type="text" th:field="*{cost}" id="cost" th:value="${office.cost}">
+    <input type="text" th:field="*{cost}" id="cost" th:value="${packageType.cost}">
     <input type="submit" value="Сохранить">
 </form>
 </body>

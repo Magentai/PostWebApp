@@ -4,9 +4,9 @@
     <meta charset="UTF-8"/>
     <title>Offices Add | Post App</title>
 </head>
-<body>
-<h1>Добавление почтового офиса</h1>
-<form action="#" th:action="@{/post/offices/add/result}" th:object="${office}" method="post">
+<body class="uk-background-muted">
+<h1 align="center" style="margin: 30px">Добавление почтового офиса</h1>
+<form action="#" th:action="@{/post/offices/add/result}" th:object="${office}" method="get">
     <label for="city">Город</label>
     <input type="text" th:field="*{city}" id="city">
     <label for="addr">Адрес</label>

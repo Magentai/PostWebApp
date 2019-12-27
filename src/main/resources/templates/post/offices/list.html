@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Offices List | Post App</title>
+    <link rel="stylesheet" href="..../static/css/uikit.min.css" th:href="@{/css/uikit.min.css}" />
+    <link rel="shortcut icon" href="..../icon/favicon.ico" th:href="@{/icon/favicon.ico}" type="image/x-icon">
 </head>
-<body>
-<h1>Список почтовых офисов</h1>
+<body class="uk-background-muted">
+<h1 align="center" style="margin: 30px">Список почтовых офисов</h1>
 <ul>
-    <a href="/post/offices/add">Добавить</a>
-    <form action="#" th:action="@{/post/offices/search}" method="post">
-        <label for="search_index">Поиск по индексу: </label><input type="text" id="search_index">
-    <input type="submit" value="Найти">
+    <a class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" href="/post/offices/add">Добавить</a>
+    <form class="uk-background-muted" action="#" th:action="@{/post/offices/search}" th:object="${office}" method="get" align="center">
+        <label for="index">Поиск по индексу: </label>
+        <input type="text" th:field="*{index}" id="index">
+    <input type="submit" value="Найти" class="uk-button uk-button-default uk-button-small">
     </form>
-    <table>
+    <table class="uk-background-muted">
         <tr>
             <td>ID</td>
             <td>Город</td>
@@ -26,8 +29,8 @@
             <td data-th-text="${office.addr}"></td>
             <td data-th-text="${office.index}"></td>
             <td data-th-text="${office.phone}"></td>
-            <td><a data-th-href="@{/post/offices/edit?id={id}(id=${office.id})}">Редактировать</a></td>
-            <td><a data-th-href="@{/post/offices/delete?id={id}(id=${office.id})}">Удалить</a></td>
+            <td><a data-th-href="@{/post/offices/edit?id={id}(id=${office.id})}" class="uk-button uk-button-primary">Редактировать</a></td>
+            <td><a data-th-href="@{/post/offices/delete?id={id}(id=${office.id})}" class="uk-button uk-button-danger">Удалить</a></td>
         </tr>
     </table>
 </ul>
